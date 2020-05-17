@@ -1,0 +1,13 @@
+version: '3.4'
+services:
+   jupyter:
+      build:
+        context: ./mushroom_classifier
+        network: host
+      container_name: jupyter_mushroom_classifier
+      restart: always
+      user: '0'
+      ports:
+         - '8889:8888'
+      volumes:
+         - ./mushroom_classifier:/home/jovyan/work
